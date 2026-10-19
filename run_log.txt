@@ -1,0 +1,48 @@
+Raw shape: (28, 12)
+Missing values before cleaning:
+ date             0
+region           1
+category         0
+product          0
+units_sold       0
+unit_cost        0
+unit_price       0
+channel          1
+revenue          0
+cost             0
+profit           0
+profit_margin    0
+dtype: int64
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
+Traceback (most recent call last):
+  File [35m"/mnt/data/Data_Science_Tool_Mastery_Project/src/analyze_sales.py"[0m, line [35m96[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/mnt/data/Data_Science_Tool_Mastery_Project/src/analyze_sales.py"[0m, line [35m51[0m, in [35mmain[0m
+    [31msns.barplot[0m[1;31m(data=category_summary, x="category", y="revenue")[0m
+    [31m~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/opt/pyvenv/lib/python3.13/site-packages/seaborn/categorical.py"[0m, line [35m2371[0m, in [35mbarplot[0m
+    color = _default_color(ax.bar, hue, color, kwargs, saturation=saturation)
+  File [35m"/opt/pyvenv/lib/python3.13/site-packages/seaborn/utils.py"[0m, line [35m142[0m, in [35m_default_color[0m
+    color = desaturate(color, saturation)
+  File [35m"/opt/pyvenv/lib/python3.13/site-packages/seaborn/utils.py"[0m, line [35m168[0m, in [35mdesaturate[0m
+    rgb = to_rgb(color)
+  File [35m"/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py"[0m, line [35m529[0m, in [35mto_rgb[0m
+    return [31mto_rgba[0m[1;31m(c)[0m[:3]
+           [31m~~~~~~~[0m[1;31m^^^[0m
+  File [35m"/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py"[0m, line [35m317[0m, in [35mto_rgba[0m
+    rgba = _to_rgba_no_colorcycle(c, alpha)
+  File [35m"/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py"[0m, line [35m401[0m, in [35m_to_rgba_no_colorcycle[0m
+    raise ValueError(f"Invalid RGBA argument: {orig_c!r}")
+[1;35mValueError[0m: [35mInvalid RGBA argument: None[0m
